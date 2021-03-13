@@ -4,11 +4,10 @@
 # AUTOSTART ---------------------------
 # -------------------------------------
 
-xrdb -merge ~/.Xresources &
+xrdb -merge ~/.xresources &
 xsetroot -cursor_name left_ptr &
 
-xset dpms 0 0 0 &
-xset s off &
+xset s off -dpms &
 xset -b &
 
 feh --bg-scale ~/.wallpaper/1.jpg &
