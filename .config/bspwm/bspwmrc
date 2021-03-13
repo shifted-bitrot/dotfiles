@@ -7,7 +7,9 @@
 xrdb -merge ~/.xresources &
 xsetroot -cursor_name left_ptr &
 
-xset s off -dpms &
+xset -dpms &
+xset s off &
+xset s noblank &
 xset -b &
 
 xbacklight -set 10 &
