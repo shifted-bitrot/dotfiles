@@ -1,0 +1,83 @@
+# -----------------------------------------
+# FUNCTION KEYS ---------------------------
+# -----------------------------------------
+XF86AudioMute
+	amixer -M set Master toggle
+XF86AudioLowerVolume
+	amixer -M set Master playback 5%-
+XF86AudioRaiseVolume
+	amixer -M set Master playback 5%+
+XF86AudioMicMute
+	amixer -M set Capture toggle
+# -----------------------------------------
+
+XF86MonBrightnessDown
+	xbacklight -dec 10
+XF86MonBrightnessUp
+	xbacklight -inc 10
+XF86Display
+	xbacklight -set 0
+XF86WLAN
+
+# -----------------------------------------
+
+XF86Tools
+XF86Bluetooth
+#F11-Not-Registered
+XF86_Favorites
+
+# -----------------------------------------
+# HOTKEYS ---------------------------------
+# -----------------------------------------
+
+# DMENU -----------------------------------
+alt + d
+	dmenu_run
+
+# BSPWM RESTART ---------------------------
+alt + shift + r
+	bspc wm -r
+
+# CLOSE FOCUS -----------------------------
+alt + shift + q
+	bspc node -c
+
+# LAUNCH TERMINAL -------------------------
+alt + Return
+	urxvt
+
+# CHANGE TILE / FULLSCREEN ----------------
+alt + f
+	bspc desktop -l next
+
+# -----------------------------------------
+# FOCUS / MOVE NODES ----------------------
+# -----------------------------------------
+
+# FOCUS / MOVE NODE -----------------------
+alt + {_,shift + }{Left,Right,Up,Down}
+	bspc node -{f,s} {west,east,north,south}
+
+# FOCUS / MOVE TO DESKTOP -----------------
+alt + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# -----------------------------------------
+# PRESELECT -------------------------------
+# -----------------------------------------
+
+# PRESELECT -------------------------------
+alt + {v,+h}
+	bspc node -p {cancel,cancel}
+
+# -----------------------------------------
+# RESIZE NODES ----------------------------
+# -----------------------------------------
+
+# EXPAND NODES ----------------------------
+super + {Left,Down,Up,Right}
+	bspc node -z {left -20 0, bottom 0 20, top 0 -20, right 20 0}
+
+# SHRINK NODES ----------------------------
+super + shift + {Left,Down,Up,Right}
+	bspc node -z {right -20 0, top 0 20, bottom 0 -20, left 20 0}

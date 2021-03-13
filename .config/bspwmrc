@@ -1,0 +1,42 @@
+#! /bin/sh
+
+# -------------------------------------
+# AUTOSTART ---------------------------
+# -------------------------------------
+
+xrdb -merge ~/.Xresources &
+xsetroot -cursor_name left_ptr &
+
+xset dpms 0 0 0 &
+xset s off &
+xset -b &
+
+feh --bg-scale ~/.wallpaper/1.jpg &
+picom -cCzG -t-3 -l-5 -r4 &
+
+sxhkd &
+polybar top &
+
+xbacklight -set 10 &
+syndaemon -i 0.5 -t -K -R &
+
+setxkbmap de &
+
+# -------------------------------------
+# BSPWM CONFIG ------------------------
+# -------------------------------------
+
+bspc monitor -d						home wwww code music
+bspc config border_width			3
+bspc config window_gap				0
+bspc config normal_border_color		\#3C4146
+bspc config active_border_color		\#3C4146
+bspc config focused_border_color	\#FF8000
+
+bspc config split_ratio				0.50
+bspc config borderless_monocle		true
+bspc config gapless_monocle			true
+bspc config top_padding				30
+bspc config bottom_padding			0
+
+bspc config focus_follows_pointer	true
