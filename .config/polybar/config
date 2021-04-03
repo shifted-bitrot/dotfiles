@@ -133,7 +133,7 @@ headphone-id					= 9
 
 mapped							= true
 
-format-volume					= <label-volume>
+format-volume					= Volume:<label-volume>
 label-volume					= %percentage:3:3%%
 
 format-muted					= <label-muted>
